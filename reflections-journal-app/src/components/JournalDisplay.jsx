@@ -7,14 +7,17 @@ class JournalDisplay extends Component {
     }
     render() { 
         return ( 
-            <div>
+            <div id = "display">
+               
 {
     this.props.entryArray.map((entry, idx) => {
         return(
-            <div KEY = {idx}>
+            <div Key = {idx}>
                 <p>Date: {entry.entryDate}</p>
                 <p>What's On Your Mind: {entry.journalEntry}</p>
-                <p>Rate Your Confidence: {entry.entryDate}</p>
+                <p>Rate Your Confidence: {entry.confidenceLevel}</p>
+                <p>Rate Your Confidence: {entry.confidence}</p>
+                <br/>
             </div>
         )
     })

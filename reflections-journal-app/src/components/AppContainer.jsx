@@ -16,10 +16,19 @@ class AppContainer extends Component {
     }
     render() {
         return (
-            <div>
-                <JournalForm   updateArray={this.updateArray}       />
-                <JournalDisplay entryArray = {this.state.entryArray}/>
-                
+            <div id="AppContainer">
+                <Router>
+                    <Link to="/">Home </Link>
+                    <Link to="/form">Form </Link>
+
+
+                </Router>
+                <JournalForm updateArray={this.updateArray} />
+                <JournalDisplay entryArray={this.state.entryArray} />
+
+
+
+
             </div>
         );
     }

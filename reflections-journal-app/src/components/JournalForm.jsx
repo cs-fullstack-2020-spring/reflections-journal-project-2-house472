@@ -6,7 +6,7 @@ class JournalForm extends Component {
         this.state = { 
             journalEntry: "",
             confidenceLevel: "",
-            entryDate:""
+            entryDate:"",
          }
     }
     handleSubmission = (event) => {
@@ -27,23 +27,33 @@ class JournalForm extends Component {
         }else if (event.target.name == "entryDate"){
             this.setState({entryDate: event.target.value})
         }
+
     }
     render() { 
         return ( 
-            <div>
+            <div id = "form">
                 <form action="">
                     <fieldset>
                         <legend>Journal Entries</legend>
 
-                        <label htmlFor="">       Date        </label>
+                        <label htmlFor="">Date </label>
                         <input type="date" id= "entryDate" name ="entryDate" onChange={this.handleChange} value={this.state.entryDate}/>
-
-                        <label htmlFor="">       Journal Entry            </label>
+<br/>
+                        <label htmlFor="">Journal Entry            </label>
                         <input type="text" id= "journalEntry" name="journalEntry" onChange={this.handleChange} value={this.state.journalEntry}/>
-
-                        <label htmlFor="">       Confidence Level          </label>
+                        <br/>
+                        <label htmlFor="">Confidence Level          </label>
                         <input type="text" id= "confidenceLevel" name="confidenceLevel" onChange={this.handleChange} value={this.state.confidenceLevel}/>
+                      {/* TO REPLACE CONFIDENCE INPUT WITH DROPDOWN */}
 
+                       {/* <select name="confidence" id="confidence">
+                       <option name="low"   value={this.state.confidence}>Low</option>
+                       <option value={this.state.confidence}>Medium</option>
+                       <option value={this.state.confidence}>High</option>
+                       </select> */}
+                       
+                       
+                        <br/>
                         <button onClick={this.handleSubmission}>Post Entry</button>
 
                     </fieldset>
