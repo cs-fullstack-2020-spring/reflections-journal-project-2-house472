@@ -16,7 +16,7 @@ class JournalDisplay extends Component {
                 <p>Date: {entry.entryDate}</p>
                 <p>What's On Your Mind: {entry.journalEntry}</p>
                 <p>Rate Your Confidence: {entry.confidenceLevel}</p>
-                <p>Rate Your Confidence: {entry.confidence}</p>
+                
                 <br/>
             </div>
         )

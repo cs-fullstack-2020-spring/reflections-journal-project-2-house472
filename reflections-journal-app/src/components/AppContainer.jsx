@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import JournalDisplay from './JournalDisplay'
 import JournalForm from './JournalForm'
-import { BrowserRouter as Router, Link, Route } from 'react'
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 class AppContainer extends Component {
     constructor(props) {
         super(props);
@@ -17,14 +17,19 @@ class AppContainer extends Component {
     render() {
         return (
             <div id="AppContainer">
+               {/* TO FIX: PLACE BUTTONS ABOVE FORM BUTTONS ARE PUSHED DOWN EACH TIME ENTRY IS DISPLAYED*/}
+               
                 <Router>
-                    <Link to="/">Home </Link>
-                    <Link to="/form">Form </Link>
-
-
+                    <a href=""> <Link to="/">Home </Link></a>
+                   <a href=""> <Link to="/form">Form </Link></a>
+                    <Route path= "/form">
+                    <JournalForm updateArray={this.updateArray} />
+                    
+                    <JournalDisplay entryArray={this.state.entryArray} />
+                    </Route>
                 </Router>
-                <JournalForm updateArray={this.updateArray} />
-                <JournalDisplay entryArray={this.state.entryArray} />
+               
+                
 
 
 
